@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { CheckCircle2, XCircle, X } from 'lucide-react';
 
 const HackerTaskDashboard = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    { id: 1, title: "Demo Task 1", completed: false },
+    { id: 2, title: "Demo Task 2", completed: false }
+  ]);
 
   // Load tasks from localStorage on mount
   useEffect(() => {
@@ -63,7 +66,7 @@ const HackerTaskDashboard = () => {
     <div className="bg-black min-h-screen p-4 sm:p-6 text-green-400 font-mono">
       <div className="max-w-4xl mx-auto bg-black border-2 border-green-400 rounded-lg p-4 sm:p-6">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center uppercase tracking-widest">
-          errands!
+          errands! 👽
         </h1>
 
         {/* Hacker Progress Bar */}
@@ -108,7 +111,6 @@ const HackerTaskDashboard = () => {
         </div>
 
         {/* Tasks Container */}
-        {/* Use responsive classes: one column by default, two columns on small screens and up */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {/* Pending Tasks */}
           <div>
