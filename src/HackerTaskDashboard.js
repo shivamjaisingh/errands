@@ -3,8 +3,8 @@ import { CheckCircle2, XCircle, X } from 'lucide-react';
 
 const HackerTaskDashboard = () => {
   const [tasks, setTasks] = useState([
-    { id: 1, title: "Demo Task 1", completed: false },
-    { id: 2, title: "Demo Task 2", completed: false }
+    { id: 1, title: "Demo Errand 1", completed: false },
+    { id: 2, title: "Demo Errand 2", completed: false }
   ]);
 
   // Load tasks from localStorage on mount
@@ -91,7 +91,7 @@ const HackerTaskDashboard = () => {
             value={newTaskTitle}
             onChange={(e) => setNewTaskTitle(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && addNewTask()}
-            placeholder="Enter new task > "
+            placeholder="Enter new errand > "
             className="flex-grow p-3 bg-black border-2 border-green-400 text-green-400 focus:outline-none w-full"
           />
           <div className="flex gap-2">
