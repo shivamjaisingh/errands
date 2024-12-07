@@ -1,6 +1,5 @@
-// src/HackerTaskDashboard.js
-import React, { useState } from 'react';
-import { CheckCircle2, XCircle, PlusCircle, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { CheckCircle2, XCircle, X } from 'lucide-react';
 
 const HackerTaskDashboard = () => {
   const [tasks, setTasks] = useState([
@@ -13,6 +12,19 @@ const HackerTaskDashboard = () => {
   ]);
 
   const [newTaskTitle, setNewTaskTitle] = useState('');
+
+  // Load tasks from localStorage on mount
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  // Save tasks to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const toggleTaskCompletion = (taskId) => {
     setTasks(tasks.map(task => 
