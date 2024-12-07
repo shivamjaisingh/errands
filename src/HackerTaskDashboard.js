@@ -63,7 +63,7 @@ const HackerTaskDashboard = () => {
     <div className="bg-black min-h-screen p-4 sm:p-6 text-green-400 font-mono">
       <div className="max-w-4xl mx-auto bg-black border-2 border-green-400 rounded-lg p-4 sm:p-6">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center uppercase tracking-widest">
-          Task Execution System
+          errands!
         </h1>
 
         {/* Hacker Progress Bar */}
