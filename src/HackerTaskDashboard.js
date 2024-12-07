@@ -13,17 +13,17 @@ const HackerTaskDashboard = () => {
 
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
-  // Load tasks from localStorage on mount
+  // Load tasks from sessionStorage on mount
   useEffect(() => {
-    const storedTasks = localStorage.getItem('tasks');
+    const storedTasks = sessionStorage.getItem('tasks');
     if (storedTasks) {
       setTasks(JSON.parse(storedTasks));
     }
   }, []);
 
-  // Save tasks to localStorage whenever they change
+  // Save tasks to sessionStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    sessionStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
   const toggleTaskCompletion = (taskId) => {
